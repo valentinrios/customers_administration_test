@@ -43,9 +43,16 @@ INSTALLED_APPS = [
 ]
 
 REST_FRAMEWORK = { 
+    'DEFAULT_RENDERER_CLASSES': (
+        'rest_framework.renderers.JSONRenderer',
+        #'rest_framework_csv.renderers.CSVRenderer',
+    ),
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'oauth2_provider.contrib.rest_framework.OAuth2Authentication', 
     ),
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    )
 } 
 
 MIDDLEWARE = [

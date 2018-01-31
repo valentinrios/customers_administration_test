@@ -67,6 +67,10 @@ class CountryDetails(APIView):
 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+	def post(self, request):
+		Country.objects.filter(id=request.data['id']).update(name=request.data['name'])
+		return Response(status=status.HTTP_202_ACCEPTED)
+
 	def delete(self, request, pk):
 		country = Country.objects.get(pk=pk)
 		country.delete()
@@ -92,6 +96,10 @@ class SportDetails(APIView):
 			serializer.save()
 			return Response(serializer.data, status=status.HTTP_201_CREATED)
 		return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+	def post(self, request):
+		Sport.objects.filter(id=request.data['id']).update(name=request.data['name'])
+		return Response(status=status.HTTP_202_ACCEPTED)
 
 	def delete(self, request, pk):
 		sport = Sport.objects.get(pk=pk)
