@@ -39,7 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'customers_admin_app',
+    'oauth2_provider',
 ]
+
+REST_FRAMEWORK = { 
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'oauth2_provider.contrib.rest_framework.OAuth2Authentication', 
+    ),
+} 
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

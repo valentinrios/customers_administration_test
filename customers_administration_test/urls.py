@@ -20,6 +20,7 @@ from customers_admin_app import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
     url(r'^countries/', views.CountryList.as_view()),
     url(r'^country/(?P<pk>[0-9]+)', views.CountryDetails.as_view()),
     url(r'^country/', views.CountryDetails.as_view()),

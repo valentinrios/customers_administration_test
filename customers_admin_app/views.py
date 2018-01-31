@@ -15,10 +15,6 @@ from .models import Sport
 from .serializers import CustomerSerializer
 from .serializers import CountrySerializer
 from .serializers import SportSerializer
-from time import gmtime, strftime
-import json
-import csv
-from django.db.models import Count
 
 class CustomerList(APIView):
 
