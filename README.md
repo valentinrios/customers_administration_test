@@ -11,6 +11,7 @@ Steps for run the project
 Endpoint for request token: http://localhost:8000/o/token/
 
 ClientID: ```2cZi3mlEXxAmdKoI85Q7htCqePKUEklTTylSpnTd```
+
 ClientSecret: ```zVksIS5FEh4EncFntm0ni0IZIlGugW0iZfUH2sbLaPH98PaBltgwnNfNlGC3Y4WZ4aobQUbIJg3CkkyIddNttAO5XKfOlAIlxoqMuM7UaYf9TC1CYTeh8R3sHq3RveOZ```
 
 Example request token:
@@ -65,3 +66,9 @@ response = requests.request("PUT", url, data=payload, headers=headers)
 
 print(response.text)
 ```
+
+Other routes:
+```http://localhost:8000/countries/```
+```http://localhost:8000/country/```
+```http://localhost:8000/sports/```
+```http://localhost:8000/sport/```
