@@ -3,13 +3,6 @@ from .models import Customer
 from .models import Country
 from .models import Sport
 
-class CustomerSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Customer
-        #fields = ('name','type_field','metric')
-        fields = '__all__'
-    
 class CountrySerializer(serializers.ModelSerializer):
 
     class Meta:
@@ -21,5 +14,13 @@ class SportSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Sport
+        #fields = ('name','type_field','metric')
+        fields = '__all__'
+
+class CustomerSerializer(serializers.ModelSerializer):
+    sport = SportSerializer(read_only=True, many=True)
+
+    class Meta:
+        model = Customer
         #fields = ('name','type_field','metric')
         fields = '__all__'
